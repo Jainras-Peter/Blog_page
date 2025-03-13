@@ -1,5 +1,5 @@
 require('dotenv').config();
-console.log("MongoDB URI:", process.env.MONGODB_URI);
+
 
 const express = require('express');
 const expressLayout = require('express-ejs-layouts');
