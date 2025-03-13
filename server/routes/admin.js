@@ -4,14 +4,14 @@ const Post = require('../models/Post');
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-<<<<<<< HEAD
+
 // const upload = require('../config/multer'); 
 const multer = require("multer");
 const { storage } = require('../cloudinary');
 const upload = multer({ storage });
-=======
+
 const upload = require('../config/multer'); 
->>>>>>> 5887f82f497038e61a3d744a2a00a16dcadc3c07
+
 
 const adminLayout = '../views/layouts/admin';
 const jwtSecret = process.env.JWT_SECRET;
@@ -159,18 +159,14 @@ router.get('/add-post', authMiddleware, async (req, res) => {
 router.post('/add-post', authMiddleware,upload.single('image') ,async (req, res) => {
   try {
     try {
-<<<<<<< HEAD
+
       console.log(req.file.path)
       const newPost = new Post({
         title: req.body.title,
         body: req.body.body,
         image:req.file.path,
-=======
-      const newPost = new Post({
-        title: req.body.title,
-        body: req.body.body,
-        image:`/uploads/${req.file.filename}`,
->>>>>>> 5887f82f497038e61a3d744a2a00a16dcadc3c07
+
+     
       });
 
       await Post.create(newPost);
@@ -219,7 +215,7 @@ router.get('/edit-post/:id', authMiddleware, async (req, res) => {
 router.put('/edit-post/:id', authMiddleware,upload.single('image'), async (req, res) => {
   try {
 
-<<<<<<< HEAD
+
     const postdata= await Post.findById(req.params.id) 
     if(req.body.title){
       postdata.title=req.body.title
@@ -232,14 +228,9 @@ router.put('/edit-post/:id', authMiddleware,upload.single('image'), async (req, 
     }
     postdata.updatedAt= Date.now()
     await postdata.save()
-=======
-    await Post.findByIdAndUpdate(req.params.id, {
-      title: req.body.title,
-      body: req.body.body,
-      image:`/uploads/${req.file.filename}`,
-      updatedAt: Date.now()
-    });
->>>>>>> 5887f82f497038e61a3d744a2a00a16dcadc3c07
+
+    
+
 
     res.redirect(`/edit-post/${req.params.id}`);
 
