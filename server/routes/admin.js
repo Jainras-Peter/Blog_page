@@ -10,7 +10,6 @@ const multer = require("multer");
 const { storage } = require('../cloudinary');
 const upload = multer({ storage });
 
-const upload = require('../config/multer'); 
 
 
 const adminLayout = '../views/layouts/admin';
