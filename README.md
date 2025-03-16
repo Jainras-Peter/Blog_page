@@ -96,12 +96,12 @@ git push origin feature/your-feature-name
 
 📜 License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. 
 
 📧 Contact
 
 For any inquiries or feedback, feel free to reach out:
-🔗 GitHub Profile
+jainsubha30@gmail.com
 
 ---
 
