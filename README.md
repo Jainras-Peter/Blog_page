@@ -14,7 +14,8 @@ A simple and interactive blogging platform where users can create, read, update,
 
 - **Frontend**: HTML, CSS, JavaScript, EJS (Embedded JavaScript)  
 - **Backend**: Node.js, Express.js  
-- **Database**: MongoDB  
+- **Database**: MongoDB
+- **Image Storage**: Cloudinary  
 
 ## 🚀 Getting Started
 
