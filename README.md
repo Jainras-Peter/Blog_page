@@ -43,9 +43,9 @@ Create a .env file in the root directory.
 
 Add the following variables:
 
-PORT=3000
-MONGODB_URI=your_mongodb_connection_string
-SESSION_SECRET=your_session_secret
+    PORT=3000
+    MONGODB_URI=your_mongodb_connection_string
+    SESSION_SECRET=your_session_secret
 
 
 
