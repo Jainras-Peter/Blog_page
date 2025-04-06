@@ -1,5 +1,4 @@
 
-
 # 📝 Blog Page
 
 A simple and interactive blogging platform where users can create, read, update, and delete blog posts.
@@ -66,6 +65,15 @@ Home Page: View all published blog posts.
 Register/Login: Create an account or log in to manage your posts.
 
 Dashboard: Create new blog posts, edit existing ones, or delete posts.
+
+---
+
+## Deployment
+
+You can access the live app here:  
+**[Blog Page- Live Site](https://blog-page-aaxe.onrender.com)**
+
+---
 
 
 🛠️ Contributing
