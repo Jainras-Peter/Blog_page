@@ -382,7 +382,12 @@ img {
 }
 
 .article-date {
+  text-decoration: none;
   font-size: 0.9rem;
   color: var(--gray);
+}
+.article-card a {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit;         /* Inherit color so it doesn't look like a link */
 }
 
