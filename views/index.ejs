@@ -10,10 +10,10 @@
   
     
    <!-- <ul class="article-ul">
-      <% data.forEach(post => { %>
+      <% data.forEach((post,ind) => { %>
         <li>
           <a href="/post/<%= post._id %>">
-            <span><%= post.title %></span>
+            <span><%= post.title %> hi</span>
             <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
           </a>
         </li>
@@ -27,6 +27,7 @@
         <img src="<%= post.image %>" alt="<%= post.title %>" class="article-image" />
         <div class="article-content">
           <h3><%= post.title %></h3>
+          <p>Author - <%=post.author.username %></p>
           <p class="article-date"><%= post.createdAt.toDateString() %></p>
         </div>
       </a>
