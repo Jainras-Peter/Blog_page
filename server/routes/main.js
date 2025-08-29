@@ -16,11 +16,7 @@ router.get('', async (req, res) => {
     let perPage = 10;
     let page = req.query.page || 1;
 
-    const data = await Post.aggregate([ { $sort: { createdAt: -1 } } ])
-    .skip(perPage * page - perPage)
-    .limit(perPage)
-    .exec();
-
+    const data = await Post.find({}).populate("author").sort({ createdAt: -1 }).skip(perPage * (page - 1)).limit(perPage);
     // Count is deprecated - please use countDocuments
     // const count = await Post.count();
     const count = await Post.countDocuments({});
@@ -65,8 +61,7 @@ router.get('/post/:id', async (req, res) => {
   try {
     let slug = req.params.id;
 
-    const data = await Post.findById({ _id: slug });
-
+    const data = await Post.findById({ _id: slug }).populate("author");
     const locals = {
       title: data.title,
       description: "Simple Blog created with NodeJs, Express & MongoDb.",
@@ -103,7 +98,7 @@ router.post('/search', async (req, res) => {
         { title: { $regex: new RegExp(searchNoSpecialChar, 'i') }},
         { body: { $regex: new RegExp(searchNoSpecialChar, 'i') }}
       ]
-    });
+    }).populate("author");
 
     res.render("search", {
       data,
