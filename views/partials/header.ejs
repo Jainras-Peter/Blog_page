@@ -10,7 +10,14 @@
           <a href="/about" class="<%= isActiveRoute('/about', currentRoute) %>">About</a>
         </li>
         <li>
+          <%if(currentUser){%>
+          <a href="/dashboard" class="<%= isActiveRoute('/dashboard', currentRoute) %>">Profile</a>
+          <a href="/logout">Logout</a>
+          <%}else{%>
+          <a href="/register" class="<%= isActiveRoute('/register', currentRoute) %>">Register</a>
           <a href="/admin" class="<%= isActiveRoute('/admin', currentRoute) %>">Login</a>
+          <%}%>
+
         </li>
       </ul>
   
